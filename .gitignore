@@ -1,0 +1,7 @@
+.cache
+compile_commands.json
+UNDERTALE_2/lib/
+engine_src/include/SFML/
+engine_src/include/glm/
+DEPENDENCIES/
+DEPENDENCIES.tar.gz
