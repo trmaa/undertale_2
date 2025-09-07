@@ -4,6 +4,7 @@
 #include <eng/window.hpp>
 
 namespace eng {
+	extern bool DEBUG;
 	extern window_t window;
 
 	extern float delta_time;

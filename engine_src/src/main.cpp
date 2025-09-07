@@ -6,6 +6,8 @@ eng::window_t eng::window;
 float eng::delta_time;
 float eng::time;
 
+bool eng::DEBUG = false;
+
 int main() {
 	sf::Event event;
 	sf::Clock clock;
@@ -25,9 +27,12 @@ int main() {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::F2)) {
                         eng::window.screenshot();	
                 }
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::F3)) {
+                        eng::DEBUG = !eng::DEBUG;
+                }
 
                 eng::delta_time = clock.restart().asSeconds();
-                eng::time += 0.05;
+                eng::time += eng::delta_time * 3;
 
 		eng::window.render();
 

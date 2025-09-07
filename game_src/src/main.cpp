@@ -1,8 +1,8 @@
 #include <glm/glm.hpp>
 #include <eng/engine.hpp>
-#include <player.hpp>
+#include "gamestate.hpp"
 
-player_t player;
+gamestate_t g_GAMESTATE = MENU;
 
 void eng::loop() {}
 
