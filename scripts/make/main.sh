@@ -10,6 +10,8 @@ GAME_DIR="UNDERTALE_2"
 function compile_engine() {
         echo -e "${YELLOW}Compiling engine...$NC"
 
+        mkdir -p $OBJECTS_DIR
+
 	local files=$(find $ENGINE_SRC_DIR/src/ -name "*.cpp")
 	local files_count=$(find $ENGINE_SRC_DIR/src/ -name "*.cpp" | wc -l)
 
@@ -27,6 +29,8 @@ function compile_engine() {
 
 function compile_game() {
 	echo -e "${YELLOW}Compiling game...$NC"
+
+	mkdir -p $OBJECTS_DIR
 
 	local files=$(find $GAME_SRC_DIR/src/ -name "*.cpp")
 	local files_count=$(find $GAME_SRC_DIR/src/ -name "*.cpp" | wc -l)
@@ -63,8 +67,20 @@ function run() {
 	cd ..
 }
 
+function clean() {
+	rm -r $OBJECTS_DIR
+	rm $GAME_DIR/undertale_2
+}
+
 function main() {
+	local start_time=$(date +%s)
+
 	for callback in $@; do $callback; done
+
+	local end_time=$(date +%s)
+	local elapsed=$((end_time - start_time))
+
+	echo -e "Done in $elapsed seconds!\n"
 }
 
 main $@

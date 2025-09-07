@@ -1,11 +1,15 @@
-#ifndef ENGINE_HPP
-#define ENGINE_HPP
+#ifndef ENG_ENGINE_HPP
+#define ENG_ENGINE_HPP
 
-#include <string>
+#include <eng/window.hpp>
 
 namespace eng {
-	extern std::string test_msg;
+	extern window_t window;
 
+	extern float delta_time;
+	extern float time;
+
+	void loop();
 	void start();
 }
 

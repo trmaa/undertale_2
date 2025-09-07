@@ -1,6 +1,9 @@
-#include <cstdio>
+#include <glm/glm.hpp>
 #include <eng/engine.hpp>
+#include <player.hpp>
 
-void eng::start() {
-	std::printf("%s\n", eng::test_msg.c_str());
-}
+player_t player;
+
+void eng::loop() {}
+
+void eng::start() {}
