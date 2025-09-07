@@ -27,6 +27,6 @@ void eng::window_t::screenshot() {
 
 	std::printf("Screenshot taken at %i\n", screenshot_id);
 
-	sf::Image image = this->m_buffer.getTexture().copyToImage();
+	sf::Image image = this->m_render_image.getTexture()->copyToImage();
 	image.saveToFile("./bin/screenshots/" + std::to_string(screenshot_id) + ".png");
 }
